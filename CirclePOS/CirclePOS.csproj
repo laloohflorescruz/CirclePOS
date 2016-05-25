@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1598FD12-5CE4-4938-B920-38F59F23209C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CirclePOS</RootNamespace>
+    <AssemblyName>CirclePOS</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net20\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ClientSetup.cs" />
+    <Compile Include="Model\Database.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Sale.cs" />
+    <Compile Include="Renderer\Button.cs" />
+    <Compile Include="Renderer\SoldScreenRenderer.cs" />
+    <Compile Include="Renderer\CustomerScreenRenderer.cs" />
+    <Compile Include="Renderer\GLMethods.cs" />
+    <Compile Include="Renderer\ImageTexture.cs" />
+    <Compile Include="Renderer\LockScreenRenderer.cs" />
+    <Compile Include="Renderer\ProductButton.cs" />
+    <Compile Include="Renderer\Renderer.cs" />
+    <Compile Include="Renderer\SalesScreenRenderer.cs" />
+    <Compile Include="Renderer\SetupScreenRenderer.cs" />
+    <Compile Include="Renderer\StringTexture.cs" />
+    <Compile Include="UI\AnalyticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AnalyticsForm.Designer.cs">
+      <DependentUpon>AnalyticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CashForm.Designer.cs">
+      <DependentUpon>CashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EditSales.Designer.cs">
+      <DependentUpon>EditSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GiftForm.Designer.cs">
+      <DependentUpon>GiftForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IntroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IntroForm.Designer.cs">
+      <DependentUpon>IntroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\PasscodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PasscodeForm.Designer.cs">
+      <DependentUpon>PasscodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SetupPasscodesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SetupPasscodesForm.Designer.cs">
+      <DependentUpon>SetupPasscodesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SetupProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SetupProductsForm.Designer.cs">
+      <DependentUpon>SetupProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SetupScreensForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SetupScreensForm.Designer.cs">
+      <DependentUpon>SetupScreensForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\AnalyticsForm.resx">
+      <DependentUpon>AnalyticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CashForm.resx">
+      <DependentUpon>CashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EditSales.resx">
+      <DependentUpon>EditSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GiftForm.resx">
+      <DependentUpon>GiftForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IntroForm.resx">
+      <DependentUpon>IntroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\PasscodeForm.resx">
+      <DependentUpon>PasscodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SetupPasscodesForm.resx">
+      <DependentUpon>SetupPasscodesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SetupProductsForm.resx">
+      <DependentUpon>SetupProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SetupScreensForm.resx">
+      <DependentUpon>SetupScreensForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark-pattern-wallpaper-38951.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Click.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MouseOver.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Whoosh.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnknownItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract_black_minimalistic_patterns_grayscale_digital_art_monochrome_1280x720_63604.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Patterns_textures_grayscale_floral_1440x900.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CashRegister.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
